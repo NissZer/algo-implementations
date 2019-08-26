@@ -1,5 +1,3 @@
-A = [25, 17, 31, 13, 2]
-
 def insertionSort(A):
     for i in range(1, len(A)):
         key = A[i]
@@ -11,4 +9,3 @@ def insertionSort(A):
 
     return A
 
-print(insertionSort(A))

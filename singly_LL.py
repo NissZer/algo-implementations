@@ -36,15 +36,5 @@ class linkedList:
             currentNode = currentNode.nextNode
         print(None)
 
-#testing
-l1 = linkedList()
-l1.printLL()
-l1.insert("3")
-l1.printLL()
-l1.insert("5")
-l1.printLL()
-l1.insert("6")
-l1.printLL()
-l1.delete("5")
-l1.printLL()
+
 
