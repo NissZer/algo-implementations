@@ -1,39 +1,39 @@
-class linkedListNode:
-    def __init__(self, value, nextNode=None):
+class LinkedListNode:
+    def __init__(self, value, next_node=None):
         self.value = value
-        self.nextNode = nextNode
+        self.next_node = next_node
 
-class linkedList:
+class LinkedList:
     def __init__(self, head=None):
         self.head = head
 
     def insert(self, value):
-        node = linkedListNode(value)
+        node = LinkedListNode(value)
         if self.head is None:
             self.head = node
             return
 
-        currentNode = self.head
+        curr_node = self.head
         while True:
-            if currentNode.nextNode is None:
-                currentNode.nextNode = node
+            if curr_node.next_node is None:
+                curr_node.next_node = node
                 break
-            currentNode = currentNode.nextNode
+            curr_node = curr_node.next_node
 
     def delete(self, value):
-        currentNode = self.head
+        curr_node = self.head
         while True:
-            last_node = currentNode
-            currentNode = currentNode.nextNode
-            if currentNode.value == value:
-                last_node.nextNode = currentNode.nextNode
+            last_node = curr_node
+            curr_node = curr_node.next_node
+            if curr_node.value == value:
+                last_node.next_node = curr_node.next_node
                 return 
 
     def printLL(self):
-        currentNode = self.head
-        while currentNode is not None:
-            print(currentNode.value, "->", end =" ")
-            currentNode = currentNode.nextNode
+        curr_node = self.head
+        while curr_node:
+            print(curr_node.value, "->", end =" ")
+            curr_node = curr_node.next_node
         print(None)
 
 
