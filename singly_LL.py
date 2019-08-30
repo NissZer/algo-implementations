@@ -34,7 +34,21 @@ class LinkedList:
         while curr_node:
             print(curr_node.value, "->", end =" ")
             curr_node = curr_node.next_node
+
         print(None)
 
+    def delete_mid(self, pos):
+        node = self.head
+        c = 0
+        while node and c != pos:
+            node = node.next_node
+            c += 1
 
+        if not node or not node.next_node:
+            return False
+
+        nxt = node.next_node
+        node.value = nxt.value
+        node.next_node = nxt.next_node
+        return True
 
