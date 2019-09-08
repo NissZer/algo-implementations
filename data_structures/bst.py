@@ -4,34 +4,31 @@ class Node:
         self.left = left
         self.right = right 
 
-def insert(value):
-    if self.val == value:
-        return False
-    elif value < self.val:
-        if self.left:
-            self.left.insert(value)
-        else:
-            self.left = Node(value)
-    elif value > self.val:
-        if self.right:
-            self.right.insert(value)
-        else:
-            self.right = Node(value)
+def insert(root, value):
+    if not root:
+        return Node(value)
 
-def search(value):
-    if not self:
+    if root.val == value:
+        return root
+
+    if value < root.val:
+        root.left = insert(root.left, value)
+    elif value > root.val:
+        root.right = insert(root.right, value)
+
+    return root
+
+def search(root, value):
+    if not root:
         return None
-    if value > self.val:
-        if self.right:
-            return self.right.search(value)
-        else:
-            return "Not found!"
-    elif value < self.val:
-        if self.left:
-            return self.left.search(value)
-        else:
-            return "Not found!"
-    return self
+
+    if value == root.val:
+        return root
+
+    if value > root.val:
+        return search(root.right, value)
+    else:
+        return search(root.left, value)
 
 def inorder(self):
     if self.left:
