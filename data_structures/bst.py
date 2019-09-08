@@ -30,6 +30,7 @@ def search(root, value):
     else:
         return search(root.left, value)
 
+
 def inorder(self):
     if self.left:
         self.left.inorder()
